@@ -1,20 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace CretaceousPark.Models
+namespace CretaceousPark.Models 
 {
-  public class CretaceousParkContext : DbContext
+  public class CretaceousParkContext : DbContext 
   {
-    public CretaceousParkContext(DbContextOptions<CretaceousParkContext> options)
-      : base(options)
-    {
+    public CretaceousParkContext(DbContextOptions<CretaceousParkContext> options) : base(options) 
+    { 
     }
 
     public DbSet<Animal> Animals { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder builder) 
     {
       builder.Entity<Animal>()
-        .HasData(
+        .HasData (
           new Animal { AnimalId = 1, Name = "Matilda", Species = "Woolly Mammoth", Age = 7, Gender = "Female" },
           new Animal { AnimalId = 2, Name = "Rexie", Species = "Dinosaur", Age = 10, Gender = "Female" },
           new Animal { AnimalId = 3, Name = "Matilda", Species = "Dinosaur", Age = 2, Gender = "Female" },
